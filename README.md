@@ -1,7 +1,9 @@
 
 **Découvrir en live : http://esipe.geonef.fr/montee-des-eaux/**
 
-__DESCRIPTION__
+Cette carte présente la supposée montée des eaux dans le monde entre 10 et 70 mètres.
+
+Pour rendre la carte utilisable et compréhensible, j'ai ajouté une couche des continents, une couche des pays, une couche des limites administratives et une couche des villes. Ces couches vont nous permettre de voir les parties du monde qui seront noyées suite aux importantes montées des eaux.
 
 
 Visualiser en WMS sous QGIS
