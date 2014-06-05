@@ -32,6 +32,7 @@ exemple Apache sur Windows.
 
 Après avoir cloné localement ce dépôt Git, il faut récupérer le fichier
 http://esipe.geonef.fr/montee-des-eaux/SRTM_500m.tif
+(attention, le fichier pèse 4,6 Go !)
 et l'enregistrer en tant que map/data/SRTM_500m.tif, en faisant :
 ```
 curl http://esipe.geonef.fr/montee-des-eaux/SRTM_500m.tif >map/data/SRTM_500m.tif
