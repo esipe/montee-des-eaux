@@ -1,0 +1,345 @@
+MAP #MAP begins here
+	FONTSET font.list
+	
+	IMAGETYPE      PNG
+	EXTENT	-225224.028356 6203060.000385 83869.751240 6401107.358457
+	SIZE           800 800
+	IMAGECOLOR     255 255 255
+	NAME           mymap
+	
+	PROJECTION #projection begins here
+		"init=epsg:4326"
+	END #projection ends here
+	
+	WEB #web begins here
+        	METADATA #metadata begins here
+				"wms_enable_request"      "*"
+				"wms_srs"                 "EPSG:4326"
+				"wms_title"               "mymap"
+				"wms_online_resource"               "http://mapserver.esipe.geonef.fr/?map=/project/montee-des-eaux/map/project.map&"	
+        	END #metadata ends here
+	END #web ends here
+
+	# Start of LAYER DEFINITIONS --------------------------------------------- 
+	
+	LAYER # Continent layer begins here 
+		NAME         continent 
+		CONNECTIONTYPE OGR 
+		CONNECTION "/project/montee-des-eaux/map/data/continent/continent.shp" 
+		STATUS       ON 
+		TYPE         POLYGON 
+
+		# The class object is defined within the layer object.  You can define as 
+		# many classes as you need (well, there are limits as with layers, but it's 
+		# senseless to define more than ten on a "normal" layer.  There are 
+		# situations, however, where you might have to do it.) 
+    
+		CLASS #class begins here
+			NAME       "Continents" 
+
+		  # There are styles in a class, just like there are classes in a layer, 
+		  # just like there are layers in a map.  You can define multiple styles in 
+		  # a class just as you can define multiple classes in a layer and multiple 
+		  # layers in a map. 
+			STYLE #style begins here
+				OUTLINECOLOR        255 0 0 
+				WIDTH 1 
+			END #style ends here
+		END #class ends here
+	END # Continent layer ends here 
+
+	LAYER # Pays layer begins here 
+		NAME         pays 
+		CONNECTIONTYPE OGR 
+		CONNECTION "/project/montee-des-eaux/map/data/pays/cntry08.shp" 
+		STATUS       ON 
+		TYPE         POLYGON 
+		SIZEUNITS pixels
+ 
+		# The class object is defined within the layer object.  You can define as 
+		# many classes as you need (well, there are limits as with layers, but it's 
+		# senseless to define more than ten on a "normal" layer.  There are 
+		# situations, however, where you might have to do it.) 
+    
+		CLASS #class begins here
+			NAME       "Pays"
+
+			  # There are styles in a class, just like there are classes in a layer, 
+			  # just like there are layers in a map.  You can define multiple styles in 
+			  # a class just as you can define multiple classes in a layer and multiple 
+			  # layers in a map. 
+			STYLE #style begins here
+				OUTLINECOLOR        0 255 255 
+				WIDTH 3 
+			END #style ends here
+		END #class ends here
+	END # Pays layer ends here 
+
+	LAYER # Pays layer begins here 
+		NAME         paysname 
+		CONNECTIONTYPE OGR 
+		CONNECTION "/project/montee-des-eaux/map/data/pays/paysname.shp" 
+		STATUS       ON 
+		TYPE         POINT 
+		SIZEUNITS pixels
+		LABELMAXSCALE 20000000
+		LABELMINSCALE 3000000
+		LABELITEM 'cntry_name'
+ 
+		# The class object is defined within the layer object.  You can define as 
+		# many classes as you need (well, there are limits as with layers, but it's 
+		# senseless to define more than ten on a "normal" layer.  There are 
+		# situations, however, where you might have to do it.) 
+    
+		CLASS #class begins here
+			NAME       "Pays"
+			LABEL #label begins here
+				OUTLINECOLOR 0 255 255
+				OUTLINEWIDTH 1
+				COLOR 0 0 0
+				FONT "font"
+				TYPE TRUETYPE
+				SIZE 9
+				ANTIALIAS TRUE
+				POSITION cc
+				PARTIALS FALSE
+			END #label ends here
+
+			  # There are styles in a class, just like there are classes in a layer, 
+			  # just like there are layers in a map.  You can define multiple styles in 
+			  # a class just as you can define multiple classes in a layer and multiple 
+			  # layers in a map. 
+			STYLE #style begins here
+				OUTLINECOLOR        0 255 255 
+				WIDTH 3 
+			END #style ends here
+		END #class ends here
+	END # Pays layer ends here 
+
+
+	LAYER # Administration layer begins here 
+		NAME         admin 
+		CONNECTIONTYPE OGR 
+		CONNECTION "/project/montee-des-eaux/map/data/admin/admin.shp" 
+		STATUS       ON 
+		TYPE         POLYGON 
+		SIZEUNITS pixels
+		MAXSCALE 10000000
+		MINSCALE 200000
+ 
+		# The class object is defined within the layer object.  You can define as 
+		# many classes as you need (well, there are limits as with layers, but it's 
+		# senseless to define more than ten on a "normal" layer.  There are 
+		# situations, however, where you might have to do it.) 
+    
+		CLASS #class begins here
+			NAME       "Limites Administratives"
+
+			  # There are styles in a class, just like there are classes in a layer, 
+			  # just like there are layers in a map.  You can define multiple styles in 
+			  # a class just as you can define multiple classes in a layer and multiple 
+			  # layers in a map. 
+			STYLE #style begins here
+				OUTLINECOLOR        255 0 255 
+				WIDTH 3 
+			END #style ends here
+		END #class ends here
+	END # Administration layer ends here 
+
+	LAYER # Administration layer begins here 
+		NAME         adminname 
+		CONNECTIONTYPE OGR 
+		CONNECTION "/project/montee-des-eaux/map/data/admin/adminname.shp" 
+		STATUS       ON 
+		TYPE         POINT 
+		SIZEUNITS pixels
+		MAXSCALE 10000000
+		MINSCALE 200000
+		LABELMAXSCALE 3000000
+		LABELMINSCALE 1000000
+		LABELITEM 'NOM_DES_AD'
+ 
+		# The class object is defined within the layer object.  You can define as 
+		# many classes as you need (well, there are limits as with layers, but it's 
+		# senseless to define more than ten on a "normal" layer.  There are 
+		# situations, however, where you might have to do it.) 
+    
+		CLASS #class begins here
+			NAME       "Limites Administratives"
+			LABEL #label begins here
+				OUTLINECOLOR 255 0 255
+				OUTLINEWIDTH 1
+				COLOR 0 0 0
+				FONT "font"
+				TYPE TRUETYPE
+				SIZE 9
+				ANTIALIAS TRUE
+				POSITION cc
+				PARTIALS FALSE
+			END #label ends here
+
+			  # There are styles in a class, just like there are classes in a layer, 
+			  # just like there are layers in a map.  You can define multiple styles in 
+			  # a class just as you can define multiple classes in a layer and multiple 
+			  # layers in a map. 
+			STYLE #style begins here
+				OUTLINECOLOR        255 0 255 
+				WIDTH 3 
+			END #style ends here
+		END #class ends here
+	END # Administration layer ends here 
+
+	LAYER #Villes layer begins here 
+		NAME         villes 
+		CONNECTIONTYPE OGR 
+		CONNECTION "/project/montee-des-eaux/map/data/villes/cities.shp" 
+		STATUS       ON 
+		TYPE         POINT
+		CLUSTER
+			MAXDISTANCE 20  
+			REGION "ellipse" 
+		END
+		LABELITEM 'city_name'
+		MAXSCALE 4000000
+		MINSCALE 200000
+		LABELMAXSCALE 1000000
+		LABELMINSCALE 200000
+    
+		CLASS #class begins here
+			NAME       "Nom des Villes" 
+			LABEL #label begins here
+				ALIGN center
+				FONT "font"
+				TYPE TRUETYPE
+				SIZE 12
+				POSITION auto
+				COLOR 0 0 0
+      			OUTLINECOLOR 0 0 255
+      			OUTLINEWIDTH 1
+			END #label ends here
+			STYLE #style begins here
+				SYMBOL "/project/montee-des-eaux/map/data/point.png"
+				SIZE 20
+			END #style ends here
+		END #class ends here
+	END # Villes layer ends here 
+
+	LAYER #Water Level 10 layer begins here
+		NAME "Water Level 10" 
+		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
+		TYPE RASTER 
+		STATUS ON 
+		MAXSCALE 8000000
+		MINSCALE 80000
+    
+		CLASS #class begins here
+			NAME	"Watert Level 10"
+			EXPRESSION ([pixel] < 10) 
+			STYLE #style begins here
+				COLOR 71 98 186 
+			END #style ends here
+		END #class ends here
+	END # Water Level 10 layer ends here
+
+	LAYER #Water Level 20 layer begins here
+		NAME "Water Level 20" 
+		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
+		TYPE RASTER 
+		STATUS ON 
+		MAXSCALE 8000000
+		MINSCALE 80000
+		
+		CLASS #class begins here
+			NAME	"Watert Level 20"
+			EXPRESSION ([pixel] < 20) 
+			STYLE #style begins here
+				COLOR 71 98 186 
+			END #style ends here
+		END #class ends here
+	END # Water Level 20 layer ends here
+
+	LAYER #Water Level 30 layer begins here
+		NAME "Water Level 30" 
+		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
+		TYPE RASTER 
+		STATUS ON 
+		MAXSCALE 8000000
+		MINSCALE 80000
+		
+		CLASS #class begins here
+			NAME	"Watert Level 30"
+			EXPRESSION ([pixel] < 30) 
+			STYLE #style begins here
+				COLOR 71 98 186 
+			END #style ends here
+		END #class ends here
+	END # Water Level 30 layer ends here
+
+	LAYER #Water Level 40 layer begins here
+		NAME "Water Level 40" 
+		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
+		TYPE RASTER 
+		STATUS ON 
+		MAXSCALE 8000000
+		MINSCALE 80000
+		
+		CLASS #class begins here
+			NAME	"Watert Level 40"
+			EXPRESSION ([pixel] < 40) 
+			STYLE #style begins here
+				COLOR 71 98 186 
+			END #style ends here
+		END #class ends here
+	END # Water Level 40 layer ends here
+
+	LAYER #Water Level 50 layer begins here
+		NAME "Water Level 50" 
+		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
+		TYPE RASTER 
+		STATUS ON 
+		MAXSCALE 8000000
+		MINSCALE 80000
+		
+		CLASS #class begins here
+			NAME	"Watert Level 50"
+			EXPRESSION ([pixel] < 50) 
+			STYLE #style begins here
+				COLOR 71 98 186 
+			END #style ends here
+		END #class ends here
+	END # Water Level 50 layer ends here
+
+	LAYER #Water Level 60 layer begins here
+		NAME "Water Level 60" 
+		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
+		TYPE RASTER 
+		STATUS ON 
+		MAXSCALE 8000000
+		MINSCALE 80000
+		
+		CLASS #class begins here
+			NAME	"Watert Level 60"
+			EXPRESSION ([pixel] < 60) 
+			STYLE #style begins here
+				COLOR 71 98 186 
+			END #style ends here
+		END #class ends here
+	END # Water Level 60 layer ends here
+
+	LAYER #Water Level 70 layer begins here
+		NAME "Water Level 70" 
+		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
+		TYPE RASTER 
+		STATUS ON 
+		MAXSCALE 8000000
+		MINSCALE 80000
+		
+		CLASS #class begins here
+			NAME	"Watert Level 70"
+			EXPRESSION ([pixel] < 70) 
+			STYLE #style begins here
+				COLOR 71 98 186 
+			END #style ends here
+		END #class ends here
+	END # Water Level 70 layer ends here
+END # MAP ends here
