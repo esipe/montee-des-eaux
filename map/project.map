@@ -206,13 +206,14 @@ MAP #MAP begins here
 		CLASS #class begins here
 			NAME       "Nom des Villes" 
 			LABEL #label begins here
-				ALIGN center
+				#ALIGN center
 				FONT "font"
 				TYPE TRUETYPE
 				SIZE 12
 				POSITION auto
 				COLOR 0 0 0
 				ANTIALIAS TRUE
+				PARTIALS FALSE
       			OUTLINECOLOR 0 0 255
       			OUTLINEWIDTH 1
 			END #label ends here

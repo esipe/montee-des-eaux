@@ -107,10 +107,9 @@ Ext.onReady(function() {
                 	address_ip, {
                     layers: "villes",
                     transparent: true,
-                    format: "image/png"
+                    format: "image/gif"
                 }, {
-                    isBaseLayer: false,
-                    buffer: 0
+                    isBaseLayer: false
                 }
             ),
 			new OpenLayers.Layer.WMS("Administrations",
@@ -119,8 +118,7 @@ Ext.onReady(function() {
                     transparent: true,
                     format: "image/png"
                 }, {
-                    isBaseLayer: false,
-                    buffer: 0
+                    isBaseLayer: false
                 }
             ),
 			new OpenLayers.Layer.WMS("Nom des Administrations",
@@ -129,8 +127,7 @@ Ext.onReady(function() {
                     transparent: true,
                     format: "image/png"
                 }, {
-                    isBaseLayer: false,
-                    buffer: 0
+                    isBaseLayer: false
                 }
             ),
 			new OpenLayers.Layer.WMS("Pays",
@@ -139,8 +136,7 @@ Ext.onReady(function() {
                     transparent: true,
                     format: "image/png"
                 }, {
-                    isBaseLayer: false,
-                    buffer: 0
+                    isBaseLayer: false
                 }
             ),
 	new OpenLayers.Layer.WMS("Nom des pays",
@@ -149,8 +145,7 @@ Ext.onReady(function() {
                     transparent: true,
                     format: "image/png"
                 }, {
-                    isBaseLayer: false,
-                    buffer: 0
+                    isBaseLayer: false
                 }
             ),
 			new OpenLayers.Layer.WMS("Continents",
@@ -159,8 +154,7 @@ Ext.onReady(function() {
                     transparent: true,
                     format: "image/png"
                 }, {
-                    isBaseLayer: false,
-                    buffer: 0
+                    isBaseLayer: false
                 }
             )
         ], 
