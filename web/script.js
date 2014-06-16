@@ -7,7 +7,7 @@ function waterLevel(name, layer){
         address_ip, {
             layers: layer,
             transparent: true,
-            format: "image/gif"
+            format: "image/png"
         }, {
                 isBaseLayer: false,
                 buffer: 0
@@ -15,25 +15,25 @@ function waterLevel(name, layer){
     );
 }
 
-var waterLevel10 = waterLevel("Water Level 10","Water Level 10");
+var waterLevel10 = waterLevel("Niveau Eau &agrave; 10 m&egrave;tres","Niveau 10");
+waterLevel10.setVisibility(false);
 
-var waterLevel20 = waterLevel("Water Level 20","Water Level 20");
+var waterLevel20 = waterLevel("Niveau Eau &agrave; 20 m&egrave;tres","Niveau 20");
 waterLevel20.setVisibility(false);
 
-var waterLevel30 = waterLevel("Water Level 30","Water Level 30");
+var waterLevel30 = waterLevel("Niveau Eau &agrave; 30 m&egrave;tres","Niveau 30");
 waterLevel30.setVisibility(false);
 
-var waterLevel40 = waterLevel("Water Level 40","Water Level 40");
+var waterLevel40 = waterLevel("Niveau Eau &agrave; 40 m&egrave;tres","Niveau 40");
 waterLevel40.setVisibility(false);
 
-var waterLevel50 = waterLevel("Water Level 50","Water Level 50");
+var waterLevel50 = waterLevel("Niveau Eau &agrave; 50 m&egrave;tres","Niveau 50");
 waterLevel50.setVisibility(false);
 
-var waterLevel60 = waterLevel("Water Level 60","Water Level 60");
+var waterLevel60 = waterLevel("Niveau Eau &agrave; 60 m&egrave;tres","Niveau 60");
 waterLevel60.setVisibility(false);
 
-var waterLevel70 = waterLevel("Water Level 70","Water Level 70");
-waterLevel70.setVisibility(false);
+var waterLevel70 = waterLevel("Niveau Eau &agrave; 70 m&egrave;tres","Niveau 70");
 
 
 Ext.onReady(function() {
@@ -87,14 +87,12 @@ Ext.onReady(function() {
 			]
 		}),
         center: [2, 46],
-        zoom: 5,
+        zoom: 7,
         layers: [
             new OpenLayers.Layer.WMS("Global Imagery",
                 "http://maps.opengeo.org/geowebcache/service/wms", {
-                    layers: "bluemarble"
-                }, {
-                    buffer: 0,
-		    tileOrigin: new OpenLayers.LonLat(-180, -90)
+                    layers: "bluemarble",
+		    format: "image/png"
                 }
             ),
             locationLayer,
@@ -111,58 +109,52 @@ Ext.onReady(function() {
                     transparent: true,
                     format: "image/gif"
                 }, {
-                    isBaseLayer: false,
-                    buffer: 0
+                    isBaseLayer: false
                 }
             ),
 			new OpenLayers.Layer.WMS("Administrations",
                 address_ip, {
                     layers: "admin",
                     transparent: true,
-                    format: "image/gif"
+                    format: "image/png"
                 }, {
-                    isBaseLayer: false,
-                    buffer: 0
+                    isBaseLayer: false
                 }
             ),
 			new OpenLayers.Layer.WMS("Nom des Administrations",
                 address_ip, {
                     layers: "adminname",
                     transparent: true,
-                    format: "image/gif"
+                    format: "image/png"
                 }, {
-                    isBaseLayer: false,
-                    buffer: 0
+                    isBaseLayer: false
                 }
             ),
 			new OpenLayers.Layer.WMS("Pays",
                 address_ip, {
                     layers: "pays",
                     transparent: true,
-                    format: "image/gif"
+                    format: "image/png"
                 }, {
-                    isBaseLayer: false,
-                    buffer: 0
+                    isBaseLayer: false
                 }
             ),
-new OpenLayers.Layer.WMS("Nom des pays",
+	new OpenLayers.Layer.WMS("Nom des pays",
                 address_ip, {
                     layers: "paysname",
                     transparent: true,
-                    format: "image/gif"
+                    format: "image/png"
                 }, {
-                    isBaseLayer: false,
-                    buffer: 0
+                    isBaseLayer: false
                 }
             ),
 			new OpenLayers.Layer.WMS("Continents",
                 address_ip, {
                     layers: "continent",
                     transparent: true,
-                    format: "image/gif"
+                    format: "image/png"
                 }, {
-                    isBaseLayer: false,
-                    buffer: 0
+                    isBaseLayer: false
                 }
             )
         ], 

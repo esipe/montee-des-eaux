@@ -5,6 +5,11 @@ Cette carte présente la supposée montée des eaux dans le monde entre 10 et 70
 
 Pour rendre la carte utilisable et compréhensible, j'ai ajouté une couche des continents, une couche des pays, une couche des limites administratives et une couche des villes. Ces couches vont nous permettre de voir les parties du monde qui seront noyées suite aux importantes montées des eaux.
 
+J'ai également mis en place une l&eacute;gende dynamique pour voir les couches actives sur la carte.
+
+Les sources des données continents, pays, administrations et villes se trouvent ici : http://www.baruch.cuny.edu/geoportal/data/esri/esri_intl.htm
+
+La source de MNT utilis&eacute; pour les niveaux de mont&eacute;e des eaux se trouve ici : https://hc.app.box.com/shared/1yidaheouv/1/34252608/355530464/1
 
 Visualiser en WMS sous QGIS
 ---------------------------

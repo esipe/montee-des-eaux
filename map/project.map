@@ -155,8 +155,8 @@ MAP #MAP begins here
 		SIZEUNITS pixels
 		MAXSCALE 10000000
 		MINSCALE 200000
-		LABELMAXSCALE 3000000
-		LABELMINSCALE 1000000
+		LABELMAXSCALE 4000000
+		LABELMINSCALE 200000
 		LABELITEM 'NOM_DES_AD'
  
 		# The class object is defined within the layer object.  You can define as 
@@ -200,20 +200,20 @@ MAP #MAP begins here
 			REGION "ellipse" 
 		END
 		LABELITEM 'city_name'
-		MAXSCALE 4000000
-		MINSCALE 200000
-		LABELMAXSCALE 1000000
-		LABELMINSCALE 200000
+		LABELMAXSCALE 4000000
+		LABELMINSCALE 100000
     
 		CLASS #class begins here
 			NAME       "Nom des Villes" 
 			LABEL #label begins here
-				ALIGN center
+				#ALIGN center
 				FONT "font"
 				TYPE TRUETYPE
 				SIZE 12
 				POSITION auto
 				COLOR 0 0 0
+				ANTIALIAS TRUE
+				PARTIALS FALSE
       			OUTLINECOLOR 0 0 255
       			OUTLINEWIDTH 1
 			END #label ends here
@@ -225,12 +225,10 @@ MAP #MAP begins here
 	END # Villes layer ends here 
 
 	LAYER #Water Level 10 layer begins here
-		NAME "Water Level 10" 
+		NAME "Niveau 10" 
 		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
 		TYPE RASTER 
-		STATUS ON 
-		MAXSCALE 8000000
-		MINSCALE 80000
+		STATUS ON
     
 		CLASS #class begins here
 			NAME	"Watert Level 10"
@@ -242,12 +240,10 @@ MAP #MAP begins here
 	END # Water Level 10 layer ends here
 
 	LAYER #Water Level 20 layer begins here
-		NAME "Water Level 20" 
+		NAME "Niveau 20" 
 		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
 		TYPE RASTER 
-		STATUS ON 
-		MAXSCALE 8000000
-		MINSCALE 80000
+		STATUS ON
 		
 		CLASS #class begins here
 			NAME	"Watert Level 20"
@@ -259,12 +255,10 @@ MAP #MAP begins here
 	END # Water Level 20 layer ends here
 
 	LAYER #Water Level 30 layer begins here
-		NAME "Water Level 30" 
+		NAME "Niveau 30" 
 		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
 		TYPE RASTER 
-		STATUS ON 
-		MAXSCALE 8000000
-		MINSCALE 80000
+		STATUS ON
 		
 		CLASS #class begins here
 			NAME	"Watert Level 30"
@@ -276,12 +270,10 @@ MAP #MAP begins here
 	END # Water Level 30 layer ends here
 
 	LAYER #Water Level 40 layer begins here
-		NAME "Water Level 40" 
+		NAME "Niveau 40" 
 		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
 		TYPE RASTER 
-		STATUS ON 
-		MAXSCALE 8000000
-		MINSCALE 80000
+		STATUS ON
 		
 		CLASS #class begins here
 			NAME	"Watert Level 40"
@@ -293,12 +285,10 @@ MAP #MAP begins here
 	END # Water Level 40 layer ends here
 
 	LAYER #Water Level 50 layer begins here
-		NAME "Water Level 50" 
+		NAME "Niveau 50" 
 		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
 		TYPE RASTER 
-		STATUS ON 
-		MAXSCALE 8000000
-		MINSCALE 80000
+		STATUS ON
 		
 		CLASS #class begins here
 			NAME	"Watert Level 50"
@@ -310,12 +300,10 @@ MAP #MAP begins here
 	END # Water Level 50 layer ends here
 
 	LAYER #Water Level 60 layer begins here
-		NAME "Water Level 60" 
+		NAME "Niveau 60" 
 		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
 		TYPE RASTER 
-		STATUS ON 
-		MAXSCALE 8000000
-		MINSCALE 80000
+		STATUS ON
 		
 		CLASS #class begins here
 			NAME	"Watert Level 60"
@@ -327,15 +315,13 @@ MAP #MAP begins here
 	END # Water Level 60 layer ends here
 
 	LAYER #Water Level 70 layer begins here
-		NAME "Water Level 70" 
+		NAME "Niveau 70" 
 		DATA "/project/montee-des-eaux/map/data/SRTM_500m.tif" 
 		TYPE RASTER 
-		STATUS ON 
-		MAXSCALE 8000000
-		MINSCALE 80000
+		STATUS ON
 		
 		CLASS #class begins here
-			NAME	"Watert Level 70"
+			NAME	"Niveau 70"
 			EXPRESSION ([pixel] < 70) 
 			STYLE #style begins here
 				COLOR 71 98 186 
